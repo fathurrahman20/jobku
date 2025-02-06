@@ -8,6 +8,7 @@ import { Prisma } from "@prisma/client";
 
 async function authenticateUser(): Promise<string> {
   const { userId } = await auth();
+
   if (!userId) redirect("/");
   return userId;
 }
@@ -97,5 +98,57 @@ export async function deleteJobAction(id: string): Promise<JobType | null> {
     console.log(error);
 
     return null;
+  }
+}
+
+export async function getSingleJobAction(id: string): Promise<JobType | null> {
+  const userId = await authenticateUser();
+  let job: JobType | null = null;
+
+  try {
+    job = await prisma.job.findUnique({
+      where: { id, clerkId: userId },
+    });
+  } catch (error) {
+    console.log(error);
+    job = null;
+  }
+  if (!job) {
+    redirect("/jobs");
+  }
+  return job;
+}
+
+export async function updateJobAction(
+  id: string,
+  values: CreateAndEditJobType
+): Promise<JobType | null> {
+  const userId = await authenticateUser();
+
+  try {
+    const job: JobType = await prisma.job.update({
+      where: { id, clerkId: userId },
+      data: { ...values },
+    });
+    return job;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+export async function getStatsAction() {
+  const userId = await authenticateUser();
+
+  try {
+    const stats = await prisma.job.groupBy({
+      where: { clerkId: userId },
+      by: ["status"],
+      _count: { status: true },
+    });
+    console.log(stats);
+  } catch (error) {
+    console.log(error);
+    redirect("/jobs");
   }
 }
