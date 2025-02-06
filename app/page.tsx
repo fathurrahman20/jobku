@@ -18,10 +18,9 @@ export default function Home() {
             job <span className="text-primary">tracking</span> app
           </h1>
           <p className="leading-loose max-w-md mt-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam
-            magni officia laborum corrupti reiciendis ipsum quos in optio
-            repellat deleniti, accusamus, dolores maxime libero dolor id magnam
-            quasi a unde?
+            Manage your job applications effortlessly with JobKu. Track your
+            progress, stay organized, and focus on landing your dream job—all in
+            one place.
           </p>
           <Button asChild className="mt-4">
             <Link href="/add-job">Get Started</Link>

@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JobKu
 
-## Getting Started
+**JobKu** is a web application built to help me track my job applications during the job search process. The main goal of this project is to provide a centralized place where I can manage and monitor the status of job applications efficiently. This project also serves as a practical way for me to deepen my knowledge of **Next.js, TypeScript, Prisma, and Clerk authentication**.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Job Application Tracking:** Displays a card list with information such as the position, company, application status (pending, interview, rejected), and work mode (full-time, internship).
+- **Add Job:** Add a new job application with details such as position, company, status, mode (full-time/internship), and location.
+- **Edit & Delete:** Update or remove job applications.
+- **Filter and Pagination:** Easily filter applications based on status or other parameters, and paginate through the results for a better user experience.
+- **Statistics Dashboard:** Visualize job application data through charts and graphs, displaying the number of applications for the last 6 months.
+- **Authentication:** Secure user authentication using Clerk (email and third-party providers).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend:** Next.js, TypeScript, shadcn UI, Tailwind CSS
+- **Authentication:** Clerk
+- **State Management & Data Fetching:** Tanstack/React-Query + Axios
+- **Form Handling & Validation:** React Hook Form, Zod
+- **Database & ORM:** PostgreSQL, Prisma
+- **Charts & Date Handling:** Recharts, Day.js
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is primarily for personal use and learning purposes. I use it to practice building full-stack applications with modern technologies and improve my understanding of state management, API integration, and data visualization.
