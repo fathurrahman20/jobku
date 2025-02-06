@@ -6,23 +6,22 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 
-interface JobDetailPageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default async function JobDetailPage({ params }: JobDetailPageProps) {
+export default async function JobDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["job", params.id],
-    queryFn: () => getSingleJobAction(params.id),
+    queryKey: ["job", id],
+    queryFn: () => getSingleJobAction(id),
   });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <EditJobForm jobId={params.id} />
+      <EditJobForm jobId={id} />
     </HydrationBoundary>
   );
 }
