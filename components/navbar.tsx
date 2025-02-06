@@ -1,7 +1,6 @@
-import React from "react";
 import LinksDropdown from "./links-dropdown";
 import ThemeToggle from "./theme-toggle";
-import { UserButton } from "@clerk/nextjs";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
   return (
@@ -12,7 +11,9 @@ export default function Navbar() {
 
       <div className="flex items-center gap-x-4">
         <ThemeToggle />
-        <UserButton />
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </nav>
   );
