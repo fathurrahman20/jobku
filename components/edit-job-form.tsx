@@ -69,7 +69,7 @@ export default function EditJobForm({ jobId }: { jobId: string }) {
         onSubmit={form.handleSubmit(onSubmit)}
         className="bg-muted p-8 rounded">
         <h2 className="capitalize font-semibold text-4xl mb-6">edit job</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 items-start">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start">
           {/* Position */}
           <CustomFormField name="position" control={form.control} />
           {/* Company */}

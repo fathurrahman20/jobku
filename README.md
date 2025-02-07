@@ -4,10 +4,10 @@
 
 ## Features
 
-- **Job Application Tracking:** Displays a card list with information such as the position, company, application status (pending, interview, rejected), and work mode (full-time, internship).
-- **Add Job:** Add a new job application with details such as position, company, status, mode (full-time/internship), and location.
+- **Job Application Tracking:** Displays a card list with information such as the position, company, application status (pending, interview, declined), and work mode (full-time, internship).
+- **Add Job:** Add a new job application with details such as position, company, status, mode (full-time/part-time/internship), and location.
 - **Edit & Delete:** Update or remove job applications.
-- **Filter and Pagination:** Easily filter applications based on status or other parameters, and paginate through the results for a better user experience.
+- **Filter and Pagination:** Easily filter applications based on status or other parameters (position or company), and paginate through the results for a better user experience.
 - **Statistics Dashboard:** Visualize job application data through charts and graphs, displaying the number of applications for the last 6 months.
 - **Authentication:** Secure user authentication using Clerk (email and third-party providers).
 
